@@ -1,8 +1,9 @@
 from lib.reconhecimento import Reconhecimento
 
 class Frases:
+    separador = ';'
     def __init__(self):
-        f = open('banco/frases', 'r')
+        f = open('/usr/local/Mariana/banco/frases', 'r')
         self.linhas = f.readlines()
         f.close()
         self.separaFrasesAutores()
@@ -10,7 +11,7 @@ class Frases:
     def separaFrasesAutores(self):
         self.frases = []
         for line in self.linhas:
-            self.frases.append(line.split('*'))
+            self.frases.append(line.split(self.separador))
         self.removeEnter()
 
     def removeEnter(self):

@@ -3,7 +3,7 @@ from lib.reconhecimento import Reconhecimento
 class Frases:
     separador = ';'
     def __init__(self):
-        f = open('/usr/local/Mariana/banco/frases', 'r')
+        f = open('banco/frases', 'r')
         self.linhas = f.readlines()
         f.close()
         self.separaFrasesAutores()
